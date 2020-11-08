@@ -1,11 +1,19 @@
 # koreatechSOC
-동연 KIM<br>
-관혁 KIM<br>
-규영 LEE<br>
 
-#1 환경설정<br>
-pip uninstall -r requirements.txt<br>
-pip install -r requirements.txt<br>
+동연 KIM
 
-#2 flask 실행<br>
-project/app.py<br>
+관혁 KIM
+
+규영 LEE
+
+
+#1 환경설정
+
+pip uninstall -r requirements.txt
+
+pip install -r requirements.txt
+
+
+#2 flask 실
+
+project/app.py
