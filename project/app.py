@@ -45,4 +45,4 @@ def hello_name(user):
     return render_template("view.html",data=user, list=[1,2,3,4])
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
