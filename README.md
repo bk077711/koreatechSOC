@@ -14,6 +14,6 @@ pip uninstall -r requirements.txt
 pip install -r requirements.txt
 
 
-#2 flask 실
+#2 flask 실행
 
 project/app.py
