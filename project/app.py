@@ -1,6 +1,7 @@
 # file name : __init__.py
 from flask import Flask
 from flask import render_template
+from project import db_connect
 
 app = Flask(__name__)
 
@@ -43,6 +44,16 @@ def index():
 @app.route("/hello/<user>")
 def hello_name(user):
     return render_template("view.html",data=user, list=[1,2,3,4])
+
+@app.route("/db")
+def showDB() :
+    db_class = db_connect.Database()
+
+    sql = "select * from model"
+    row = db_class.execute(sql)
+    print(row)
+
+    return render_template('index.html', resultData=row[0])
 
 if __name__ == "__main__":
     app.run(debug=True)
