@@ -7,6 +7,7 @@
 규영 LEE
 
 #1 환경저장
+
 pip freeze > requirements.txt
 
 #2 환경설정
