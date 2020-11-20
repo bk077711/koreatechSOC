@@ -1,3 +1,4 @@
 project/venv/
 .idea/
 project/myApi.json
+project/makeApiKey.py
