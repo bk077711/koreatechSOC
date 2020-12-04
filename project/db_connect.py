@@ -17,5 +17,9 @@ class Database() :
 
         return row
 
+    def create(self, query, args={}) :
+        self.cursor.execute(query, args)
+        self.db.commit()
+
     def commit(self) :
         self.db.commit()
