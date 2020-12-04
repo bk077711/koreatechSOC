@@ -34,10 +34,11 @@ class apiCall() :
                 else :
                     rdnmadr = item.find('rdnmadr').get_text()
 
-                if item.find('fshlcPhoneNumber') != None :
-                    fshlcPhoneNumber = item.find('fshlcphonenumber').get_text()
-                else :
+                if item.find('fshlcPhoneNumber') == None :
                     fshlcPhoneNumber = '-'
+                else :
+                    fshlcPhoneNumber = item.find('fshlcphonenumber').get_text()
+
                 kdfsh = item.find('kdfsh').get_text()
                 useCharge = item.find('usecharge').get_text()
 
@@ -47,10 +48,7 @@ class apiCall() :
                 if len(row) == 0 :
                     sql = 'insert into fish (fname, ftype, flocation, fphone, fish, fmoney) values (%s, %s, %s, %s, %s, %s)'
                     val = (fshlcNm, fshlcType, rdnmadr, fshlcPhoneNumber, kdfsh, useCharge)
-                    print(val)
-                    row = db_class.execute(sql, val)
-                    print(row)
-
+                    db_class.create(sql, val)
 
 
 fish_class = apiCall()
