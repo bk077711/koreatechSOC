@@ -45,7 +45,7 @@ class apiCall() :
                 sql = 'select * from fish where flocation=\'' + rdnmadr + '\''
                 row = db_class.execute(sql)
 
-                if len(row) == 0 :
+                if len(row) == 0 and fshlcType == '바다' :
                     sql = 'insert into fish (fname, ftype, flocation, fphone, fish, fmoney) values (%s, %s, %s, %s, %s, %s)'
                     val = (fshlcNm, fshlcType, rdnmadr, fshlcPhoneNumber, kdfsh, useCharge)
                     db_class.create(sql, val)
