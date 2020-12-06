@@ -34,22 +34,19 @@ class apiCall() :
                 else :
                     rdnmadr = item.find('rdnmadr').get_text()
 
-                if item.find('fshlcPhoneNumber') == None :
-                    fshlcPhoneNumber = '-'
-                else :
-                    fshlcPhoneNumber = item.find('fshlcphonenumber').get_text()
-
                 kdfsh = item.find('kdfsh').get_text()
                 useCharge = item.find('usecharge').get_text()
+
+                latitude = item.find('latitude').get_text()
+                longitude = item.find('longitude').get_text()
 
                 sql = 'select * from fish where flocation=\'' + rdnmadr + '\''
                 row = db_class.execute(sql)
 
-                if len(row) == 0 and fshlcType == '바다' :
-                    sql = 'insert into fish (fname, ftype, flocation, fphone, fish, fmoney) values (%s, %s, %s, %s, %s, %s)'
-                    val = (fshlcNm, fshlcType, rdnmadr, fshlcPhoneNumber, kdfsh, useCharge)
+                if len(row) == 0 and fshlcType == '바다' and fshlcNm != '35.065079' and latitude != '11.11111111':
+                    sql = 'insert into fish (fname, flocation, fish, fmoney, flatitude, flongitude) values (%s, %s, %s, %s, %s, %s)'
+                    val = (fshlcNm, rdnmadr, kdfsh, useCharge, latitude, longitude)
                     db_class.create(sql, val)
-
 
 fish_class = apiCall()
 fish_class.fish()
