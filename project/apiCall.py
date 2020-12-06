@@ -49,21 +49,30 @@ class apiCall() :
                     val = (fshlcNm, rdnmadr, kdfsh, useCharge, latitude, longitude)
                     db_class.create(sql, val)
 
-    def temp(self) :
+    def temp(self, sea) :
         now = datetime.datetime.now()
         nowDate = now.strftime('%Y%m%d')
 
         open_api_key = self.myApi['weather']['key']
-        params = '&GRU_NAM=001&SDATE=' + nowDate + '&EDATE=' + nowDate
+        params = '&pageNo=1&GRU_NAM=' + sea + '&SDATE=' + nowDate + '&EDATE=' + nowDate
         open_url = 'http://apis.data.go.kr/1520635/OceanMensurationService/getOceanMesurationListrisa?ServiceKey=' + open_api_key + params
 
         res = requests.get(open_url)
         soup = BeautifulSoup(res.content, 'html.parser')
         data = soup.find_all('item')
-        for item in data :
-            print(item.find('wtrtmp_3'))
 
+        cnt = 0
+        tt = 0
+        for item in data :
+            if item.find('wtrtmp_1') == None :
+                pass
+
+            else :
+                tt += float(item.find('wtrtmp_1').get_text())
+                cnt += 1
+        print(round(tt/cnt, 2))
 
 apiCall = apiCall()
 #apiCall.fish()
-apiCall.temp()
+apiCall.temp('001')
+# sea = 동해 001, 서해 002, 남해 003
