@@ -2,23 +2,6 @@
 from flask import Flask
 from flask import render_template
 from project import db_connect
-from bs4 import BeautifulSoup
-import requests
-
-open_api_key = 'e0sDpw2N6j6D7Okz%2FZoNk2mk%2FRNboBgqmyzQkvdDChtYIzzW3kOe7bfJcBlqGNti4QpTr5bygXrZBJm6XEFJrQ%3D%3D'
-params = ''
-
-open_url = 'http://api.data.go.kr/openapi/tn_pubr_public_fshlc_api?ServiceKey='+ open_api_key + params
-
-res = requests.get(open_url)
-soup = BeautifulSoup(res.content, 'html.parser')
-
-
-data = soup.find_all('item')
-for item in data:
-    fshlcnm = item.find('fshlcnm')
-    kdfsh = item.find('kdfsh')
-    print(fshlcnm.get_text(), kdfsh.get_text())
 
 app = Flask(__name__)
 
