@@ -21,5 +21,9 @@ class Database() :
         self.cursor.execute(query, args)
         self.db.commit()
 
+    def truncate(self) :
+        query ='truncate table fish'
+        self.cursor.execute(query)
+
     def commit(self) :
         self.db.commit()

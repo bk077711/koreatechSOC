@@ -9,8 +9,9 @@ class apiCall() :
         with open('myApi.json', 'r') as f :
             self.myApi = json.load(f)
 
-    def fish(self) :
+    def fishCreate(self) :
         db_class = db_connect.Database()
+        db_class.truncate()
 
         open_api_key = self.myApi['fish']['key']
         params = '&numOfRows=100&pageNo=1'
@@ -49,6 +50,17 @@ class apiCall() :
                     val = (fshlcNm, rdnmadr, kdfsh, useCharge, latitude, longitude)
                     db_class.create(sql, val)
 
+    def fishFind(self, addr) :
+        db_class = db_connect.Database()
+
+        sql = 'select * from fish where flocation like %s'
+        val = '%' + addr + '%'
+
+        row = db_class.execute(sql, val)
+
+        for i in row :
+            print(i)
+
     def temp(self, sea) :
         now = datetime.datetime.now()
         nowDate = now.strftime('%Y%m%d')
@@ -73,6 +85,6 @@ class apiCall() :
         print(round(tt/cnt, 2))
 
 apiCall = apiCall()
-#apiCall.fish()
-apiCall.temp('001')
-# sea = 동해 001, 서해 002, 남해 003
+#apiCall.fishCreate()
+apiCall.fishFind('태안')
+#apiCall.temp('001') # sea = 동해 001, 서해 002, 남해 003
