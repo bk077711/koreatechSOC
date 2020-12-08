@@ -3,11 +3,7 @@ from flask import Flask, request
 from flask import render_template
 from flask import request
 from project import db_connect
-<<<<<<< HEAD
 
-
-=======
->>>>>>> ec75719c06d381c6c2f8e6a142260924398bfe0b
 app = Flask(__name__)
 
 @app.route("/")
