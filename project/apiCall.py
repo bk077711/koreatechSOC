@@ -61,6 +61,16 @@ class apiCall() :
         for i in row :
             print(i)
 
+    def fishLocation(self) :
+        db_class = db_connect.Database()
+
+        sql = 'select flocation from fish'
+
+        row = db_class.execute(sql)
+
+        print(row)
+        print(type(row))
+
     def temp(self, sea) :
         now = datetime.datetime.now()
         nowDate = now.strftime('%Y%m%d')
@@ -86,7 +96,8 @@ class apiCall() :
 
 apiCall = apiCall()
 #apiCall.fishCreate()
-apiCall.fishFind('태안')
+apiCall.fishLocation()
+#apiCall.fishFind('태안')
 #apiCall.temp('001') # sea = 동해 001, 서해 002, 남해 003
 
 '''
@@ -103,4 +114,7 @@ apiCall.fishFind('태안')
 광어13~17도 // 
 문어 15 ~ 25
 감성돔 17~19도 // 2~6도, 31도~37도
+
+35.48630, 129.42927(방어진항) - 일본 이즈모시 지점 밑으로 남해
+34.419005,126.078643진도 바다 - 기준 왼쪽은 서해
 '''
