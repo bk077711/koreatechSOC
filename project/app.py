@@ -65,14 +65,5 @@ def showDB() :
 
     return render_template('index.html', resultData=row[0])
 
-@app.route("/list")
-def search_list():
-    return render_template("index_list.html")
-
-@app.route("/post",methods=['post'])
-def post():
-    value = request.form['input']
-    return render_template("index_list.html", data = value)
-
 if __name__ == "__main__":
     app.run(debug=True)
