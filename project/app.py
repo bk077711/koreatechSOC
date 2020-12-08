@@ -2,7 +2,7 @@
 from flask import Flask, request
 from flask import render_template
 from project import db_connect
-
+# 가나다라마바사
 app = Flask(__name__)
 
 @app.route("/")
