@@ -29,6 +29,7 @@
 
 <body>
   <!-- Navigation -->
+  {{ data }}
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="#">Team.BoysFishing</a>
@@ -52,7 +53,7 @@
           <form action="/post" method = "post">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input list = "location" id ="input" name = "input" class="form-control form-control-lg"placeholder="장소를 선택해주세요.">
+                <input list = "location" id ="input" name = "input" class="form-control form-control-lg"placeholder="{{data}}">
                       <datalist id = "location">
                           <option value="충청남도 태안군" label="충청남도"></option>
                               <option value="충청남도 보령시" label="충청남도"></option>
@@ -151,7 +152,7 @@ var map = new naver.maps.Map('map', mapOptions);
           <form>
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+                <input type="email" class="form-control form-control-lg" placeholder="{{ data }}">
               </div>
               <div class="col-12 col-md-3">
                 <button type="button" class="btn btn-block btn-lg btn-primary" onclick="location.href='http://127.0.0.1:5000/list' ">Sign up!</button>

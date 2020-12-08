@@ -1,8 +1,7 @@
 # file name : __init__.py
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
 from project import db_connect
-
 app = Flask(__name__)
 
 @app.route("/")
@@ -54,6 +53,15 @@ def showDB() :
     print(row)
 
     return render_template('index.html', resultData=row[0])
+
+@app.route("/list")
+def search_list():
+    return render_template("index_list.html")
+
+@app.route("/post",methods=['post'])
+def post():
+    value = request.form['input']
+    return render_template("index_list.html", data = value)
 
 if __name__ == "__main__":
     app.run(debug=True)
