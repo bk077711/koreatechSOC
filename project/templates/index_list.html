@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <title>간단한 지도 표시하기</title>
+    <title>BOYSFISHING</title>
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=n3uuywhy9m"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,7 +17,7 @@
     html,body {margin:0; padding:0; position: relative; height: 100%;}
     #wrap {margin:0 auto;text-align:center;}
     #quick_bg {margin:0 auto;text-align:center;width:960px;position:relative;}
-    #quick {position:absolute;z-index:2;top:15px;width:153px;right:0px;}
+    #quick {position:absolute;z-index:5;top:15px;width:153px;right:0px;}
 </style>
 
   <title>Landing Page - Start Bootstrap Theme</title>
@@ -36,25 +36,12 @@
 </head>
 
 <body>
-<!-- Navigation -->
-  <nav class="navbar navbar-light bg-light static-top">
-    <div class="container">
-      <li class="list-inline-item">
-        <a class="navbar-brand" href="/home">Team.BoysFishing</a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn btn-primary" href="/home">Home</a>
-        <a class="btn btn-primary" href="/introduction">Introduction</a>
-        <a class="btn btn-primary" href="/location">Location</a>
-      </li>
 
-    </div>
-  </nav>
 <div id="wrap">
-	<div id="quick_bg">
-		<div id="quick">
-			<a style="position:fixed;margin-left : 100px; margin-top:-150px";>
-                <table border="0" boardercolor = "black" width = "500px" height = "500px" align = "left">
+   <div id="quick_bg">
+      <div id="quick">
+         <a style="position:fixed;margin-left : 100px; margin-top:150px";>
+                <table border="10" boardercolor = "black" width = "500px" height = "500px" align = "left">
 
                     <tr>
                         <h2>{{ location }}</h2>
@@ -74,16 +61,74 @@
                     </tr>
                 </table>
             </a>
-		</div>
+      </div>
     </div>
 </div>
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <li class="list-inline-item">
+        <a class="navbar-brand" href="/home">Team.BoysFishing</a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn btn-primary" href="/home">Home</a>
+        <a class="btn btn-primary" href="/introduction">Introduction</a>
+        <a class="btn btn-primary" href="/location">Location</a>
+      </li>
+
+    </div>
+  </nav>
 <!DOCTYPE html>
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">어형어제</h1>
+        </div>
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form action="/post" method = "post">
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input list = "location" id ="input" name = "input" class="form-control form-control-lg"placeholder="{{location}}">
+                      <datalist id = "location">
+                          <option value="충청남도 태안군" label="충청남도"></option>
+                              <option value="충청남도 보령시" label="충청남도"></option>
+                              <option value="충청남도 당진시" label="충청남도"></option>
+                              <option value="전라남도 장흥군" label="전라남도"></option>
+                              <option value="전라남도 신안군" label="전라남도"></option>
+                              <option value="전라남도 무안군" label="전라남도"></option>
+                              <option value="전라남도 고흥군" label="전라남도"></option>
+                              <option value="전라남도 강진군" label="전라남도"></option>
+                              <option value="인천광역시 옹진군" label="인천광역시"></option>
+                              <option value="울산광역시 북구" label="울산광역시"></option>
+                              <option value="부산광역시 영도구" label="부산광역시"></option>
+                              <option value="부산광역시 강서구" label="부산광역시"></option>
+                              <option value="경상북도 울진군" label="경상북도"></option>
+                              <option value="경상남도 통영시" label="경상남도"></option>
+                              <option value="경상남도 창원시" label="경상남도"></option>
+                              <option value="경상남도 남해군" label="경상남도"></option>
+                              <option value="경상남도 거제시" label="경상남도"></option>
+                              <option value="경기도 화성시" label="경기도"></option>
+                              <option value="경기도 안산시" label="경기도"></option>
+                      </datalist>
+              </div>
+              <div class="col-12 col-md-3">
+                  <input type = "submit" value = "SEARCH" class="btn btn-block btn-lg btn-primary">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <!-- Image Showcases -->
 
             {% for i in data %}
 
-                  <table border="1" boardercolor = "blue" width = "1500" height = "300" align = "left" margin-top="100">
+                  <table border="0" boardercolor = "blue" width = "1500" height = "300" align = "left" margin-top="100">
                       <tr>
                           <td rowspan="3" align = "center" width="300"><img src = "/static/img/fishing.jpg" width="300" height="300"></td>
                           <td colspan="2" align="center"><h1>{{ i['fname'] }}</h1></td>
@@ -195,6 +240,14 @@ for (var i=0, ii=markers.length; i<ii; i++) {
 
 </script>
 
+
+
+  <!-- Call to Action -->
+
+
+  <!-- Footer -->
+
+  <!-- Bootstrap core JavaScript -->
   <script src="/static/vendor/jquery/jquery.min.js"></script>
   <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
