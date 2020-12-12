@@ -16,7 +16,7 @@ def home():
 
 @app.route("/introduction")
 def introduction() :
-    return render_template("introduction.html")
+    return render_template("usingAPI.html")
 
 @app.route("/location")
 def search_list():
@@ -27,6 +27,12 @@ def post():
     value = request.form['input']
     return redirect("/location/" + value)
 
+@app.route("/admin/update")
+def update() :
+    info = apiCall.apiCall()
+    info.fishCreate()
+    return redirect("/")
+
 @app.route("/location/<value>")
 def findFishing(value) :
     info = apiCall.apiCall()
@@ -36,7 +42,7 @@ def findFishing(value) :
         fish_dict[j['fname']] = [j['flatitude'], j['flongitude']]
 
     return render_template("index_list.html", data = FFF, location = value, fdic = fish_dict
-                           #,temp=info.getData('temp'), fishList=info.getData('fishList')
+                           ,temp=info.getData('temp'), fishList=info.getData('fishList')
                            )
 
 if __name__ == "__main__":
