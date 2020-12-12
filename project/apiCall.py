@@ -1,7 +1,7 @@
 import json
 from bs4 import BeautifulSoup
 import requests
-from project import db_connect
+import db_connect
 import datetime
 from haversine import haversine
 

@@ -1,8 +1,7 @@
 # file name : __init__.py
 from flask import Flask, request, redirect, url_for
 from flask import render_template
-from project import db_connect
-from project import apiCall
+import apiCall
 # 가나다라마바사
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
