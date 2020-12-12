@@ -12,8 +12,6 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Landing Page - Start Bootstrap Theme</title>
-
   <!-- Bootstrap core CSS -->
   <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -67,11 +65,48 @@
           <p class="lead mb-0">네이버 지도 API를 이용하여 검색된 낚시터의 위치를 화면상에 표시하여준다.</p>
           <p class="lead mb-0">위도 경도를 기준으로 낚시터의 위치를 구하고 지도에 표시할 수 있다.</p>
           <p class="lead mb-0">검색된 낚시터가 아닌 인근에 있는 낚시터도 표시하여 준다.</p>
-
         </div>
       </div>
     </div>
   </section>
+
+    <section class="showcase">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <table border="2" width ="700" height="400" align = "center">
+          <tr align ="center">
+            <p style="font-size:30em;"><td colspan = "3"><b>Web Dynamic Map</b></td></p>
+          </tr>
+          <tr align ="center">
+            <p><td colspan = "3">패닝, 줌인아웃 등 인터랙티브가 가능한 동적 지도를 보여줍니다.</td></p>
+          </tr>
+          <tr align ="center">
+            <th>파라미터</th>
+            <th>타입</th>
+            <th>세부설명</th>
+          </tr>
+          <tr align ="center">
+            <th>center</th>
+            <th>string</th>
+            <th>중심 좌표와 X,Y좌표를 따르고 <경도 위도> 순서</th>
+          </tr>
+          <tr align ="center">
+            <th>w,h</th>
+            <th>int</th>
+            <th>가로 세로 이미지 크기</th>
+          </tr>
+          <tr align ="center">
+            <th>level</th>
+            <th>int</th>
+            <th>지도의 줌 레벨</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+
 
   <section class="showcase">
     <div class="container-fluid p-0">
@@ -87,6 +122,58 @@
       </div>
     </div>
   </section>
+
+  <section class="showcase">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <table border="2" width ="700" height="400" align = "center">
+          <tr align ="center">
+            <p style="font-size:30em;"><td colspan = "3"><b>전국낚시터정보</b></td></p>
+          </tr>
+          <tr align ="center">
+            <p><td colspan = "3">전국 낚시터 정보(주요 어종, 낚시터 편익시설)등을 제공합니다.</td></p>
+          </tr>
+          <tr align ="center">
+            <th>파라미터</th>
+            <th>타입</th>
+            <th>세부설명</th>
+          </tr>
+          <tr align ="center">
+            <th>fshlcNm</th>
+            <th>string</th>
+            <th>해당 낚시터 이름</th>
+          </tr>
+          <tr align ="center">
+            <th>rdnmadr</th>
+            <th>string</th>
+            <th>낚시터의 도로명 주소</th>
+          </tr>
+          <tr align ="center">
+            <th>kdfsh</th>
+            <th>string</th>
+            <th>해당 낚시터에서 잡히는 어종</th>
+          </tr>
+          <tr align ="center">
+            <th>usecharge</th>
+            <th>int</th>
+            <th>낚시터 이용 비용</th>
+          </tr>
+          <tr align ="center">
+            <th>latitude</th>
+            <th>string</th>
+            <th>해당 낚시터의 위도</th>
+          </tr>
+          <tr align ="center">
+            <th>longitude</th>
+            <th>string</th>
+            <th>해당 낚시터의 경도</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
 
 
     <section class="showcase">
@@ -106,8 +193,49 @@
   </section>
 
 
+  <section class="showcase">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <table border="2" width ="700" height="400" align = "center">
+          <tr align ="center">
+            <p style="font-size:30em;"><td colspan = "3"><b>실시간어장정보</b></td></p>
+          </tr>
+          <tr align ="center">
+            <p><td colspan = "3">(해양수산연구정보) 전국 연안 관측소에서 측정한 수온, 염분, 용존산소 등의 정보를 실시간 매 30분 단위로 서비스</td></p>
+          </tr>
+          <tr align ="center">
+            <th>파라미터</th>
+            <th>타입</th>
+            <th>세부설명</th>
+          </tr>
+          <tr align ="center">
+            <th>STA_CDE</th>
+            <th>string</th>
+            <th>관측소 코드</th>
+          </tr>
+          <tr align ="center">
+            <th>GRU_NAM</th>
+            <th>string</th>
+            <th>해양 이름(동해,서해,남해)</th>
+          </tr>
+          <tr align ="center">
+            <th>wtrTmp</th>
+            <th>string</th>
+            <th>해양 표층 수온</th>
+          </tr>
+          <tr align ="center">
+            <th>SDATE</th>
+            <th>string</th>
+            <th>해양 수온 관측 시작 시간</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
 
-  <!-- Testimonials -->
+
+
+    <!-- Testimonials -->
   <section class="testimonials text-center bg-light">
     <div class="container">
       <h2 class="mb-5">사용 설명서</h2>
@@ -119,23 +247,81 @@
             <p class="lead mb-0" style="text-align:left">수온에 따른 추천 어종이 있는 낚시터를 지도에 마커로 표시하여 추천해줍니다.</p>
           </div>
         </div>
-<!--        <div class="col-lg-4">-->
-<!--          <div class="testimonial-item mx-auto mb-5 mb-lg-0">-->
-<!--            <img class="img-fluid rounded-circle mb-3" src="static/img/dong.jpg" alt="">-->
-<!--            <h5>Dongyeon Kim</h5>-->
-<!--            <p class="font-weight-light mb-0">2015136017</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="col-lg-4">-->
-<!--          <div class="testimonial-item mx-auto mb-5 mb-lg-0">-->
-<!--            <img class="img-fluid rounded-circle mb-3" src="static/img/gyu.jpg" alt="">-->
-<!--            <h5>Kyuyoung Lee</h5>-->
-<!--            <p class="font-weight-light mb-0">2015136089</p>-->
-<!--          </div>-->
-<!--        </div>-->
       </div>
     </div>
   </section>
+
+  <section class="showcase">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <table border="4" width ="1000" height="600" align = "center">
+          <tr align ="center">
+            <p>
+            <td colspan = "4" style="font-size:35px;"><b>파라미터 소개</b></td>
+            </p>
+          </tr>
+
+          <tr align ="center">
+            <th>입출력</th>
+            <th>파라미터</th>
+            <th>타입</th>
+            <th>설명</th>
+          </tr>
+          <tr align ="center" border ="3">
+            <th rowspan="1">Input</th>
+            <th>지역</th>
+            <th>varchar</th>
+            <th>가려고 하는 지역의 주소</th>
+          </tr>
+          <tr align ="center">
+            <th rowspan="8">Output</th>
+            <th>fname</th>
+            <th>varchar</th>
+            <th>해당 낚시터의 이름</th>
+          </tr>
+          <tr align ="center">
+            <th>location</th>
+            <th>varchar</th>
+            <th>낚시터의 도로명 주소</th>
+          </tr>
+          <tr align ="center">
+            <th>fish</th>
+            <th>varchar</th>
+            <th>해당 낚시터에서 잡히는 어종</th>
+          </tr>
+          <tr align ="center">
+            <th>fmoney</th>
+            <th>varchar</th>
+            <th>낚시터 이용 비용</th>
+          </tr>
+          <tr align ="center">
+            <th>flatitude</th>
+            <th>varchar</th>
+            <th>해당 낚시터의 위도</th>
+          </tr>
+          <tr align ="center">
+            <th>flongitude</th>
+            <th>varchar</th>
+            <th>해당 낚시터의 경도</th>
+          </tr>
+          <tr align ="center">
+            <th>temp</th>
+            <th>varchar</th>
+            <th>낚시터 인근 바다의 평균 수온</th>
+          </tr>
+          <tr align ="center">
+            <th>fishlist</th>
+            <th>varchar</th>
+            <th>해양 수온에 적합한 어종 추천</th>
+          </tr>
+
+
+
+        </table>
+      </div>
+    </div>
+  </section>
+
 <!DOCTYPE html>
 <div id="map" style="width:100%;height:400px;"></div>
 
