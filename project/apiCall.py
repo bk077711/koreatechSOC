@@ -114,12 +114,23 @@ class apiCall() :
         nowDate = now.strftime('%Y%m%d')
 
         open_api_key = self.myApi['weather']['key']
-        params = '&pageNo=1&GRU_NAM=' + sea + '&SDATE=' + nowDate + '&EDATE=' + nowDate
-        open_url = 'http://apis.data.go.kr/1520635/OceanMensurationService/getOceanMesurationListrisa?ServiceKey=' + open_api_key + params
+        params = '&GRU_NAM=' + sea + '&SDATE=' + nowDate + '&EDATE=' + nowDate
+        open_url = 'http://apis.data.go.kr/1520635/OceanMensurationService/getOceanMesurationListrisa?serviceKey=' + open_api_key + params
+
 
         res = requests.get(open_url)
         soup = BeautifulSoup(res.content, 'html.parser')
         data = soup.find_all('item')
+
+        if len(data) == 0 :
+            params = '&GRU_NAM=' + sea + '&SDATE=20201212&EDATE=20201212'
+            open_url = 'http://apis.data.go.kr/1520635/OceanMensurationService/getOceanMesurationListrisa?serviceKey=' + open_api_key + params
+            res = requests.get(open_url)
+            soup = BeautifulSoup(res.content, 'html.parser')
+            data = soup.find_all('item')
+
+            print(soup)
+            print(open_url)
 
         cnt = 0
         tt = 0
